@@ -4,5 +4,26 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/PlatformerLandingScene.unity
+    guid: 420a39aa1c39d984f90947c5d77293eb
+  - enabled: 1
+    path: Assets/Scenes/PlatformerScene1.unity
+    guid: e1d39a56ed8348c44ba988c3336ab74b
+  - enabled: 1
+    path: Assets/Scenes/PlatformerScene2.unity
+    guid: 72b9064bc0983fe43a4166fc345e7b53
+  - enabled: 1
+    path: Assets/Scenes/BreakoutLandingScene.unity
+    guid: c3534b617f818904eab4efc78dc9c259
+  - enabled: 1
+    path: Assets/Scenes/RCRacingLandingScene.unity
+    guid: 00f23e419cd72b140837ba17a753a5d5
+  - enabled: 1
+    path: Assets/Scenes/SpaceShooterLandingScene.unity
+    guid: 35ea00bc84e415d42a981a2be365ddef
   m_configObjects: {}
