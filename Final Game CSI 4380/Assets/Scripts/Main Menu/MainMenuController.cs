@@ -47,13 +47,13 @@ public class MainMenuController : MonoBehaviour
     private void Awake()
     {
         ConvertRawTimesToTimeSpan();
-        PlatFormerHighScore.SetText("Best Time:" + PlatformerTimeConverted.ToString("mm' : 'ss"));
+        PlatFormerHighScore.SetText("Best Time: " + PlatformerTimeConverted.ToString("mm':'ss"));
         SpaceShooterHighScore.SetText("High Score: " + HighScores.SpaceShooterHighScore);
         BreakoutHighScore.SetText("High Score: " + HighScores.BreakoutHighScore);
-        Track1BestTime.SetText(Track1BestConverted.ToString("mm' : 'ss"));
-        Track2BestTime.SetText(Track2BestConverted.ToString("mm' : 'ss"));
-        Track3BestTime.SetText(Track3BestConverted.ToString("mm' : 'ss"));
-        Track4BestTime.SetText(Track4BestConverted.ToString("mm' : 'ss"));
+        Track1BestTime.SetText(Track1BestConverted.ToString("m':'ss':'ff"));
+        Track2BestTime.SetText(Track2BestConverted.ToString("m':'ss':'ff"));
+        Track3BestTime.SetText(Track3BestConverted.ToString("m':'ss':'ff"));
+        Track4BestTime.SetText(Track4BestConverted.ToString("m':'ss':'ff"));
         Track1BestPlacing.SetText(ConvertPlacingToString(HighScores.BestPlacings["Track1"]));
         Track2BestPlacing.SetText(ConvertPlacingToString(HighScores.BestPlacings["Track2"]));
         Track3BestPlacing.SetText(ConvertPlacingToString(HighScores.BestPlacings["Track3"]));
