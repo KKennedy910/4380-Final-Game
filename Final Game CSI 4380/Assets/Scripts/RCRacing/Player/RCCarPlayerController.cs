@@ -27,9 +27,11 @@ public class RCCarPlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(isDelayFinished)
-        HandleMovement();
-        ApplyFriction();
+        if (isDelayFinished)
+        {
+            HandleMovement();
+            ApplyFriction();
+        }
     }
     private void ApplyFriction()
     {
@@ -39,6 +41,16 @@ public class RCCarPlayerController : MonoBehaviour
 
     private void HandleMovement()
     {
+        if (Input.GetAxis("Horizontal") > 0)
+        {
+            if (rb.velocity.magnitude != 0)
+                rb.AddTorque(-rotationSpeed * 1000);
+        }
+        else if (Input.GetAxis("Horizontal") < 0)
+        {
+            if (rb.velocity.magnitude != 0)
+                rb.AddTorque(rotationSpeed * 1000);
+        }
         if (Input.GetAxis("Vertical") != 0)
         {
             if (Input.GetAxis("Vertical") > 0 && rb.velocity.magnitude < maxSpeed)
@@ -53,20 +65,10 @@ public class RCCarPlayerController : MonoBehaviour
             }
 
         }
-
-        if (Input.GetAxis("Horizontal") > 0)
-        {
-            if (rb.velocity.magnitude != 0)
-                rb.MoveRotation(rb.rotation - rotationSpeed * Time.deltaTime);
-        }
-        else if (Input.GetAxis("Horizontal") < 0)
-        {
-            if (rb.velocity.magnitude != 0)
-                rb.MoveRotation(rb.rotation + rotationSpeed * Time.deltaTime);
-        }
-        if (isMovingForward)
+        var directionDotProduct = Vector2.Dot(rb.velocity, transform.up);
+        if (directionDotProduct > 0)
             rb.velocity = rb.velocity.magnitude * transform.up;
-        else if (!isMovingForward)
+        else if(directionDotProduct < 0)
             rb.velocity = rb.velocity.magnitude * -transform.up;
     }
 
@@ -76,6 +78,5 @@ public class RCCarPlayerController : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
         }
-
     }
 }

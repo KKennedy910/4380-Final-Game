@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/RCRacingScene1.unity
+- path: Assets/Scenes/SpaceShooterLandingScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
