@@ -10,7 +10,6 @@ public class RCCarPlayerController : MonoBehaviour
     private float frictionCoef = 1.2f;
     private float rotationSpeed = 200f;
     private Rigidbody2D rb;
-    private bool isMovingForward;
     private bool isDelayFinished = false;
 
     private void Start()
@@ -56,12 +55,10 @@ public class RCCarPlayerController : MonoBehaviour
             if (Input.GetAxis("Vertical") > 0 && rb.velocity.magnitude < maxSpeed)
             {
                 rb.AddForce(transform.up * acceleration);
-                isMovingForward = true;
             }
             if (Input.GetAxis("Vertical") < 0 && rb.velocity.magnitude < maxSpeed)
             {
                 rb.AddForce(transform.up * -acceleration);
-                isMovingForward = false;
             }
 
         }

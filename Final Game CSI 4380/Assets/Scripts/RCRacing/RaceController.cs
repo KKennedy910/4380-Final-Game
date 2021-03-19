@@ -119,4 +119,6 @@ public class RaceController : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
     }
+    public void ChangeTrackName(string newTrackName) => currentTrack = newTrackName;
+
 }
