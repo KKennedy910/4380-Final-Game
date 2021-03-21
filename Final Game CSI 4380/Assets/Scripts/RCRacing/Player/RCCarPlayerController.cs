@@ -42,13 +42,17 @@ public class RCCarPlayerController : MonoBehaviour
     {
         if (Input.GetAxis("Horizontal") > 0)
         {
-            if (rb.velocity.magnitude != 0)
+            if (rb.velocity.magnitude > 1f)
                 rb.AddTorque(-rotationSpeed * 1000);
+            else
+                rb.AddTorque(-rotationSpeed * rb.velocity.magnitude * 1000);
         }
         else if (Input.GetAxis("Horizontal") < 0)
         {
-            if (rb.velocity.magnitude != 0)
+            if (rb.velocity.magnitude > 1f)
                 rb.AddTorque(rotationSpeed * 1000);
+            else
+                rb.AddTorque(rotationSpeed * rb.velocity.magnitude * 1000);
         }
         if (Input.GetAxis("Vertical") != 0)
         {
@@ -63,10 +67,16 @@ public class RCCarPlayerController : MonoBehaviour
 
         }
         var directionDotProduct = Vector2.Dot(rb.velocity, transform.up);
-        if (directionDotProduct > 0)
-            rb.velocity = rb.velocity.magnitude * transform.up;
-        else if(directionDotProduct < 0)
-            rb.velocity = rb.velocity.magnitude * -transform.up;
+        if (rb.velocity.magnitude > .25f)
+        {
+            if (directionDotProduct > 0)
+                rb.velocity = rb.velocity.magnitude * transform.up;
+            else if (directionDotProduct < 0)
+                rb.velocity = rb.velocity.magnitude * -transform.up;
+        }
+        else
+            rb.velocity = Vector2.zero;
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
