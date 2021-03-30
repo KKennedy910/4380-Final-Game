@@ -14,10 +14,9 @@ public static class HighScores
         {"Track4", 0f}
     };
     public static Dictionary<string, int> BestPlacings = new Dictionary<string, int>() {
-        {"Track1", 0},
-        {"Track2", 0},
-        {"Track3", 0},
-        {"Track4", 0}
+        {"Track1", 5},
+        {"Track2", 5},
+        {"Track3", 5},
+        {"Track4", 5}
     };
-
 }
