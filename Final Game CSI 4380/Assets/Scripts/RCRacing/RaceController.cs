@@ -32,13 +32,20 @@ public class RaceController : MonoBehaviour
     private TextMeshProUGUI ThirdPlaceTime;
     [SerializeField]
     private TextMeshProUGUI FourthPlaceTime;
-    private string currentTrack = "Track1";
+    private string currentTrack;
 
     private int trackLaps = 5;
     public LapTracker[] PlacementTracker { get; private set; } = new LapTracker[4];
     private int finishingIndex = 0;
     private float currentTime = -5f;
+    private bool isRaceEnding = false;
+
     public TimeSpan convertedTime { get; private set; }
+
+    private void Start()
+    {
+        currentTrack = GrandPrixController.GetTrackName();
+    }
     private void Update()
     {
         currentTime += Time.deltaTime;
@@ -80,7 +87,7 @@ public class RaceController : MonoBehaviour
             UpdatePostRaceScreen(finishingIndex, "Green");
             finishingIndex++;
         }
-        if (finishingIndex == 4)
+        if (finishingIndex == 4 && isRaceEnding == false)
         {
             EndRace();
         }
@@ -111,14 +118,22 @@ public class RaceController : MonoBehaviour
 
     private void EndRace()
     {
+        isRaceEnding = true;
         raceCanvasController.EndRaceDisplay();
         StartCoroutine(EndRaceDelay());
+        if(GrandPrixController.currentTrack < 4)
+        {
+            GrandPrixController.IncrementTrackCount();
+        }
+        else
+        {
+            GrandPrixController.ResetGrandPrix();
+        }
     }
 
     IEnumerator EndRaceDelay()
     {
         yield return new WaitForSeconds(5);
     }
-    public void ChangeTrackName(string newTrackName) => currentTrack = newTrackName;
 
 }

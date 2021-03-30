@@ -6,7 +6,7 @@ using UnityEngine;
 public class RCCarPlayerController : MonoBehaviour
 {
     private float maxSpeed = 8f;
-    private float acceleration = 10f;
+    private float playerAccel = 10f;
     private float frictionCoef = 1.2f;
     private float rotationSpeed = 200f;
     private Rigidbody2D rb;
@@ -58,11 +58,11 @@ public class RCCarPlayerController : MonoBehaviour
         {
             if (Input.GetAxis("Vertical") > 0 && rb.velocity.magnitude < maxSpeed)
             {
-                rb.AddForce(transform.up * acceleration);
+                rb.AddForce(transform.up * playerAccel);
             }
             if (Input.GetAxis("Vertical") < 0 && rb.velocity.magnitude < maxSpeed)
             {
-                rb.AddForce(transform.up * -acceleration);
+                rb.AddForce(transform.up * -playerAccel);
             }
 
         }

@@ -11,11 +11,10 @@ public class LapTracker : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Checkpoint1")
-            hasReachedCheckpoint1 = !hasReachedCheckpoint1;
+            hasReachedCheckpoint1 = true;
         if (collision.gameObject.tag == "Checkpoint2")
         {
-            if (hasReachedCheckpoint1)
-                hasReachedCheckpoint2 = !hasReachedCheckpoint2;
+            hasReachedCheckpoint2 = true;
         }
         if (collision.gameObject.tag == "Checkpoint3")
         {

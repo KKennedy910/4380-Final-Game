@@ -8,10 +8,6 @@ public class NPCCarController : MonoBehaviour
     [SerializeField]
     private NPCCarPath Destination;
     public float maxSpeed = 8f;
-    private float acceleration = 10f;
-    private float frictionCoef = 1.2f;
-    private float rotationSpeed = 20f;
-    private float refSpeed = 0f;
     private bool isDelayFinished = false;
     private void Start()
     {

@@ -29,6 +29,7 @@ public class SceneLoader : MonoBehaviour
             SceneManager.LoadScene("SpaceShooterLandingScene");
         else
             SceneManager.LoadScene("SpaceShooterScene" + currentGameSceneIndex);
+        currentGameSceneIndex++;
     }
     public void LoadBreakout()
     {
@@ -36,6 +37,7 @@ public class SceneLoader : MonoBehaviour
             SceneManager.LoadScene("BreakoutLandingScene");
         else
             SceneManager.LoadScene("BreakoutScene" + currentGameSceneIndex);
+        currentGameSceneIndex++;
     }
     public void LoadRCRacing()
     {
@@ -43,5 +45,6 @@ public class SceneLoader : MonoBehaviour
             SceneManager.LoadScene("RCRacingLandingScene");
         else
             SceneManager.LoadScene("RCRacingScene" + currentGameSceneIndex);
+        currentGameSceneIndex++;
     }
 }

@@ -26,4 +26,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SpaceShooterLandingScene.unity
     guid: 35ea00bc84e415d42a981a2be365ddef
+  - enabled: 1
+    path: Assets/Scenes/RCRacingScene1.unity
+    guid: 42e90475beaef644592c37f763119f79
+  - enabled: 1
+    path: Assets/Scenes/RCRacingScene2.unity
+    guid: 9801687573b09604185c52b9d89feb2b
+  - enabled: 1
+    path: Assets/Scenes/RCRacingScene3.unity
+    guid: 6565d1df4cf8ab940a07a5f5e0b9cc49
+  - enabled: 1
+    path: Assets/Scenes/RCRacingScene4.unity
+    guid: 8ca36815843950c44bbca74439f5e8d6
   m_configObjects: {}
