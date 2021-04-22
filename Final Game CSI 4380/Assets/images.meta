@@ -1,6 +1,17 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream:Final Game CSI 4380/Assets/images.meta
 guid: ae9707d8bc943734698198493f9c72a2
+=======
+guid: 99583834acb61954ba60f2f6c1aebad6
+>>>>>>> Stashed changes:Final Game CSI 4380/Assets/Sprites/Breakout.meta
 folderAsset: yes
+=======
+guid: 6bbf8a8be24e04bdca316bd9fe152376
+folderAsset: yes
+timeCreated: 1519162877
+licenseType: Free
+>>>>>>> Stashed changes
 DefaultImporter:
   externalObjects: {}
   userData: 
